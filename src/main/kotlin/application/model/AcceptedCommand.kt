@@ -1,4 +1,8 @@
 package com.notes.application.model
 
-class AcceptedCommand {
-}
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class AcceptedCommand(
+    val commandId: String
+)

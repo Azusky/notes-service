@@ -3,9 +3,22 @@ ktor:
     port: 8080
   application:
     modules:
+      - com.notes.plugins.DependencyInjectionKt.configureDependencyInjection
+      - com.notes.plugins.DatabaseKt.configureDatabase
+      - com.notes.plugins.WorkersKt.configureWorkers
       - com.notes.plugins.HttpKt.configureHttp
       - com.notes.plugins.MonitoringKt.configureMonitoring
       - com.notes.plugins.SerializationKt.configureSerialization
       - com.notes.plugins.SecurityKt.configureSecurity
       - com.notes.plugins.StatusPagesKt.configureStatusPages
       - com.notes.plugins.RoutingKt.configureRouting
+database:
+  url: "${DATABASE_URL}"
+  user: "${DATABASE_USER}"
+  password: "${DATABASE_PASSWORD}"
+
+rabbitmq:
+  host: "${RABBITMQ_HOST}"
+  port: "${RABBITMQ_PORT}"
+  username: "${RABBITMQ_USERNAME}"
+  password: "${RABBITMQ_PASSWORD}"

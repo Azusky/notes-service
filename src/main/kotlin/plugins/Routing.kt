@@ -1,16 +1,13 @@
 package com.notes.plugins
 
-import com.notes.api.routes.noteRoutes
-import com.notes.data.NoteRepositoryImpl
-import com.notes.application.NoteService
+import com.notes.api.routes.NoteRoutes
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
+import org.koin.ktor.ext.get
 
 fun Application.configureRouting() {
-    val repository = NoteRepositoryImpl()
-    val service = NoteService(repository)
-
+    val noteRoutes = get<NoteRoutes>()
     routing {
-        noteRoutes(service)
+        noteRoutes.register(this)
     }
 }

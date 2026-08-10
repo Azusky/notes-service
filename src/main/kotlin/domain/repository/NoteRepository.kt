@@ -1,19 +1,29 @@
 package com.notes.domain.repository
 
 import com.notes.domain.model.Note
+import com.notes.domain.result.Answer
 
 interface NoteRepository {
-    fun getAll(): List<Note>
-    fun create(title: String, content: String): Note
-    fun getById(id: Long): Note?
+
+    fun getAll(): Answer<List<Note>>
+
+    fun getById(id: Long): Answer<Note>
+
+    fun create(
+        title: String,
+        content: String
+    ): Answer<Note>
+
     fun update(
-
         id: Long,
-
+        expectedVersion: Long,
         title: String?,
-
         content: String?
-
-    ): Note?
-    fun delete(id: Long): Boolean
+    ): Answer<Note>
+    fun createOnce(
+        commandId: String,
+        title: String,
+        content: String
+    ): Answer<Note>
+    fun delete(id: Long): Answer<Unit>
 }

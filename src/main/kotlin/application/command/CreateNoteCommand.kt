@@ -1,4 +1,6 @@
 package com.notes.application.command
 
-class CreateNoteCommand {
-}
+data class CreateNoteCommand(
+    val title: String,
+    val content: String
+)

@@ -1,73 +1,51 @@
 package com.notes.data
 
+import com.notes.data.source.NoteDbSource
 import com.notes.domain.model.Note
 import com.notes.domain.repository.NoteRepository
+import com.notes.domain.result.Answer
 
-class NoteRepositoryImpl : NoteRepository {
-    private val notes = mutableListOf(
-        Note(
-            id = 1,
-            title = "Learn Ktor",
-            content = "Learn routing and serialization"
-        ),
+class NoteRepositoryImpl(
+    private val dbSource: NoteDbSource
+) : NoteRepository {
 
-        Note(
-            id = 2,
-            title = "PostgreSQL",
-            content = "Connect database later"
-        )
+    override fun getAll(): Answer<List<Note>> =
+        dbSource.getAll()
 
-    )
-    override fun getAll(): List<Note> {
-        return notes
-    }
+    override fun getById(id: Long): Answer<Note> =
+        dbSource.getById(id)
+
     override fun create(
         title: String,
         content: String
-    ): Note {
-
-        val note = Note(
-            id = (notes.maxOfOrNull { it.id } ?: 0) + 1,
+    ): Answer<Note> =
+        dbSource.create(
+            title = title,
+            content = content
+        )
+    override fun createOnce(
+        commandId: String,
+        title: String,
+        content: String
+    ): Answer<Note> =
+        dbSource.createOnce(
+            commandId = commandId,
+            title = title,
+            content = content
+        )
+    override fun update(
+        id: Long,
+        expectedVersion: Long,
+        title: String?,
+        content: String?
+    ): Answer<Note> =
+        dbSource.update(
+            id = id,
+            expectedVersion = expectedVersion,
             title = title,
             content = content
         )
 
-        notes.add(note)
-
-        return note
-
-    }
-
-    override fun getById(id: Long): Note? {
-        return notes.find { it.id == id }
-    }
-
-    override fun update(
-        id: Long,
-        title: String?,
-        content: String?
-    ): Note? {
-
-        val index = notes.indexOfFirst { it.id == id }
-
-        if (index == -1) {
-            return null
-        }
-
-        val oldNote = notes[index]
-
-        val updatedNote = oldNote.copy(
-            title = title ?: oldNote.title,
-            content = content ?: oldNote.content
-        )
-
-        notes[index] = updatedNote
-
-        return updatedNote
-
-    }
-
-    override fun delete(id: Long): Boolean {
-        return notes.removeIf { it.id == id }
-    }
+    override fun delete(id: Long): Answer<Unit> =
+        dbSource.delete(id)
 }

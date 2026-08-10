@@ -1,4 +1,8 @@
 package com.notes.application.messaging
 
-class NoteCommandPublisher {
+interface NoteCommandPublisher {
+    fun publishCreate(message: CreateNoteMessage)
+    fun publishUpdate(
+        message: UpdateNoteMessage
+    )
 }

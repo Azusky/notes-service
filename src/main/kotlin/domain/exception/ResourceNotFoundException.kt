@@ -1,5 +1,5 @@
 package com.notes.domain.exception
 
-class NotFoundException(
+class ResourceNotFoundException(
     message: String
 ) : RuntimeException(message)

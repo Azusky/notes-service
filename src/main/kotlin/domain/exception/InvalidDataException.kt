@@ -1,4 +1,5 @@
 package com.notes.domain.exception
 
-class InvalidDataException {
-}
+class InvalidDataException(
+    message: String
+) : RuntimeException(message)

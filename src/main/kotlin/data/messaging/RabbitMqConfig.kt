@@ -1,4 +1,8 @@
 package com.notes.data.messaging
 
-class RabbitMqConfig {
-}
+data class RabbitMqConfig(
+    val host: String,
+    val port: Int,
+    val username: String,
+    val password: String
+)

@@ -2,11 +2,31 @@
 hayden-khealth = "3.0.2"
 kotlin = "2.4.0"
 logback = "1.5.35"
+koin = "4.2.1"
+exposed = "1.4.0"
+postgres = "42.7.8"
+hikari = "7.0.2"
+junit = "5.12.2"
+flyway = "11.20.2"
+jackson = "2.21.4"
+rabbitmq = "5.33.0"
 
 [libraries]
 hayden-khealth = { module = "dev.hayden:khealth", version.ref = "hayden-khealth" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
-
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin" }
+koin-ktor = { module = "io.insert-koin:koin-ktor" }
+koin-logger-slf4j = { module = "io.insert-koin:koin-logger-slf4j" }
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres" }
+hikari = { module = "com.zaxxer:HikariCP", version.ref = "hikari" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+flyway-postgresql = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
+jackson-bom = { module = "com.fasterxml.jackson:jackson-bom", version.ref = "jackson" }
+rabbitmq-client = { module = "com.rabbitmq:amqp-client", version.ref = "rabbitmq" }
+exposed-java-time = { module = "org.jetbrains.exposed:exposed-java-time", version.ref = "exposed" }
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

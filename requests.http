@@ -1,5 +1,5 @@
 ### GET notes
-GET  http://localhost:8080/notes
+GET  http://localhost:8080/notes/a
 
 ###
 
@@ -8,23 +8,49 @@ POST http://localhost:8080/notes
 Content-Type: application/json
 
 {
-     "title": "",
-    "content":"Testing my first POST"
+  "title": 123
+
 }
 
-### PUT note
-PATCH http://localhost:8080/notes/1
-Content-Type: application/json
 
-{
-  "title": "New title"
-}
-###
 ### PUT Note
-PATCH http://localhost:8080/notes/1
+PATCH http://localhost:8080/notes/3
 Content-Type: application/json
 
 {
-  "content": "New content"
+  "version": 1,
+  "title": "New title 2"}
+###
+
+DELETE http://localhost:8080/notes/1
+Content-Type: application/json
+
+###
+POST http://localhost:8080/notes
+Content-Type: application/json
+
+{
+  "title": "Final smoke test",
+  "content": "Created through RabbitMQ"
 }
 ###
+PATCH http://localhost:8080/notes/5
+Content-Type: application/json
+
+{
+  "version": 0,
+
+  "title": "Stale title"
+}
+
+###
+POST http://localhost:8080/notes
+Content-Type: application/json
+
+{
+
+  "title": "DB failure test",
+
+  "content": "Must not be silently lost"
+
+}

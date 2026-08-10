@@ -712,6 +712,15 @@
                     <li data-group="Default" data-name="notesGet" class="">
                       <a href="#api-Default-notesGet">notesGet</a>
                     </li>
+                    <li data-group="Default" data-name="notesIdDelete" class="">
+                      <a href="#api-Default-notesIdDelete">notesIdDelete</a>
+                    </li>
+                    <li data-group="Default" data-name="notesIdGet" class="">
+                      <a href="#api-Default-notesIdGet">notesIdGet</a>
+                    </li>
+                    <li data-group="Default" data-name="notesIdPatch" class="">
+                      <a href="#api-Default-notesIdPatch">notesIdPatch</a>
+                    </li>
                     <li data-group="Default" data-name="notesPost" class="">
                       <a href="#api-Default-notesPost">notesPost</a>
                     </li>
@@ -1124,6 +1133,702 @@ except ApiException as e:
 
                           <h2>Parameters</h2>
 
+
+
+
+
+
+                          <h2>Responses</h2>
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-notesIdDelete">
+                      <article id="api-Default-notesIdDelete-0" data-group="User" data-name="notesIdDelete" data-version="0">
+                        <div class="pull-left">
+                          <h1>notesIdDelete</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/notes/{id}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-notesIdDelete-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-notesIdDelete-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-notesIdDelete-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-notesIdDelete-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-notesIdDelete-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-notesIdDelete-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-notesIdDelete-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-notesIdDelete-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-notesIdDelete-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-notesIdDelete-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-notesIdDelete-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-notesIdDelete-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X DELETE\
+"//notes/{id}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-notesIdDelete-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        
+        DefaultApi apiInstance = new DefaultApi();
+         id = ; //  | 
+        try {
+            apiInstance.notesIdDelete(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#notesIdDelete");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-notesIdDelete-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+         id = ; //  | 
+        try {
+            apiInstance.notesIdDelete(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#notesIdDelete");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-notesIdDelete-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-notesIdDelete-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp"> *id = ; // 
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+[apiInstance notesIdDeleteWith:id
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdDelete-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var UntitledApi = require('untitled_api');
+
+var api = new UntitledApi.DefaultApi()
+var id = ; // {{}} 
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.notesIdDelete(id, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-notesIdDelete-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-notesIdDelete-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class notesIdDeleteExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new DefaultApi();
+            var id = new (); //  | 
+
+            try
+            {
+                apiInstance.notesIdDelete(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.notesIdDelete: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdDelete-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiDefaultApi();
+$id = ; //  | 
+
+try {
+    $api_instance->notesIdDelete($id);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->notesIdDelete: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdDelete-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $id = ; #  | 
+
+eval { 
+    $api_instance->notesIdDelete(id => $id);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->notesIdDelete: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdDelete-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+id =  #  | 
+
+try: 
+    api_instance.notes_id_delete(id)
+except ApiException as e:
+    print("Exception when calling DefaultApi->notesIdDelete: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">id*</td>
+                                  <td>
+                                  
+                                  
+                                      <div id="d2e199_notesIdDelete_id">
+                                          <div class="json-schema-view">
+                                              <div class="primitive">
+                                                  <span class="type">
+                                                      
+                                                  </span>
+                                  
+                                              </div>
+                                                  <div class="inner required">
+                                                      Required
+                                                  </div>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  </tr>
+                            </table>
+
+
+
+
+
+                          <h2>Responses</h2>
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-notesIdGet">
+                      <article id="api-Default-notesIdGet-0" data-group="User" data-name="notesIdGet" data-version="0">
+                        <div class="pull-left">
+                          <h1>notesIdGet</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/notes/{id}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-notesIdGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-notesIdGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-notesIdGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-notesIdGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-notesIdGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-notesIdGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-notesIdGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-notesIdGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-notesIdGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-notesIdGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-notesIdGet-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-notesIdGet-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X GET\
+"//notes/{id}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-notesIdGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        
+        DefaultApi apiInstance = new DefaultApi();
+         id = ; //  | 
+        try {
+            apiInstance.notesIdGet(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#notesIdGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-notesIdGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+         id = ; //  | 
+        try {
+            apiInstance.notesIdGet(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#notesIdGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-notesIdGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-notesIdGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp"> *id = ; // 
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+[apiInstance notesIdGetWith:id
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var UntitledApi = require('untitled_api');
+
+var api = new UntitledApi.DefaultApi()
+var id = ; // {{}} 
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.notesIdGet(id, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-notesIdGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-notesIdGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class notesIdGetExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new DefaultApi();
+            var id = new (); //  | 
+
+            try
+            {
+                apiInstance.notesIdGet(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.notesIdGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiDefaultApi();
+$id = ; //  | 
+
+try {
+    $api_instance->notesIdGet($id);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->notesIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $id = ; #  | 
+
+eval { 
+    $api_instance->notesIdGet(id => $id);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->notesIdGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+id =  #  | 
+
+try: 
+    api_instance.notes_id_get(id)
+except ApiException as e:
+    print("Exception when calling DefaultApi->notesIdGet: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">id*</td>
+                                  <td>
+                                  
+                                  
+                                      <div id="d2e199_notesIdGet_id">
+                                          <div class="json-schema-view">
+                                              <div class="primitive">
+                                                  <span class="type">
+                                                      
+                                                  </span>
+                                  
+                                              </div>
+                                                  <div class="inner required">
+                                                      Required
+                                                  </div>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  </tr>
+                            </table>
+
+
+
+
+
+                          <h2>Responses</h2>
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Default-notesIdPatch">
+                      <article id="api-Default-notesIdPatch-0" data-group="User" data-name="notesIdPatch" data-version="0">
+                        <div class="pull-left">
+                          <h1>notesIdPatch</h1>
+                          <p></p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="patch"><code><span class="pln">/notes/{id}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Default-notesIdPatch-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Default-notesIdPatch-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Default-notesIdPatch-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Default-notesIdPatch-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Default-notesIdPatch-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Default-notesIdPatch-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Default-notesIdPatch-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Default-notesIdPatch-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Default-notesIdPatch-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Default-notesIdPatch-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Default-notesIdPatch-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Default-notesIdPatch-0-curl">
+                           <pre class="prettyprint"><code class="language-bsh">curl -X PATCH\
+"//notes/{id}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Default-notesIdPatch-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DefaultApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        
+        DefaultApi apiInstance = new DefaultApi();
+         id = ; //  | 
+        try {
+            apiInstance.notesIdPatch(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#notesIdPatch");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Default-notesIdPatch-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DefaultApi;
+
+public class DefaultApiExample {
+
+    public static void main(String[] args) {
+        DefaultApi apiInstance = new DefaultApi();
+         id = ; //  | 
+        try {
+            apiInstance.notesIdPatch(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#notesIdPatch");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Default-notesIdPatch-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Default-notesIdPatch-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp"> *id = ; // 
+
+DefaultApi *apiInstance = [[DefaultApi alloc] init];
+
+[apiInstance notesIdPatchWith:id
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdPatch-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var UntitledApi = require('untitled_api');
+
+var api = new UntitledApi.DefaultApi()
+var id = ; // {{}} 
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.notesIdPatch(id, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Default-notesIdPatch-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Default-notesIdPatch-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class notesIdPatchExample
+    {
+        public void main()
+        {
+
+            var apiInstance = new DefaultApi();
+            var id = new (); //  | 
+
+            try
+            {
+                apiInstance.notesIdPatch(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.notesIdPatch: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdPatch-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\ApiDefaultApi();
+$id = ; //  | 
+
+try {
+    $api_instance->notesIdPatch($id);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->notesIdPatch: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdPatch-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DefaultApi;
+
+my $api_instance = WWW::SwaggerClient::DefaultApi->new();
+my $id = ; #  | 
+
+eval { 
+    $api_instance->notesIdPatch(id => $id);
+};
+if ($@) {
+    warn "Exception when calling DefaultApi->notesIdPatch: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Default-notesIdPatch-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+id =  #  | 
+
+try: 
+    api_instance.notes_id_patch(id)
+except ApiException as e:
+    print("Exception when calling DefaultApi->notesIdPatch: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">id*</td>
+                                  <td>
+                                  
+                                  
+                                      <div id="d2e199_notesIdPatch_id">
+                                          <div class="json-schema-view">
+                                              <div class="primitive">
+                                                  <span class="type">
+                                                      
+                                                  </span>
+                                  
+                                              </div>
+                                                  <div class="inner required">
+                                                      Required
+                                                  </div>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  </tr>
+                            </table>
 
 
 
