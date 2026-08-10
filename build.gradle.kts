@@ -24,7 +24,6 @@ dependencies {
     implementation(ktorLibs.server.core)
     implementation(ktorLibs.server.cors)
     implementation(ktorLibs.server.netty)
-    implementation(ktorLibs.server.openapi)
     implementation(ktorLibs.server.routingOpenapi)
     implementation(ktorLibs.server.statusPages)
     implementation(ktorLibs.server.swagger)

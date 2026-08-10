@@ -56,11 +56,6 @@ fun appModule( rabbitMqConfig: RabbitMqConfig) = module {
             dbSource = get()
         )
     }
-    single<NoteRepository>(){
-        NoteRepositoryImpl(
-            dbSource = get()
-        )
-    }
     single<NoteOperations> (){
         NoteService(get(),get())
     }

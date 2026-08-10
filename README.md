@@ -76,6 +76,10 @@ Once the stack is healthy, the API is available at `http://localhost:8080`:
 curl http://localhost:8080/notes
 ```
 
+Interactive API docs (Swagger UI) are served at
+`http://localhost:8080/swagger`, backed by the OpenAPI spec in
+`src/main/resources/openapi/documentation.yaml`.
+
 RabbitMQ's management UI is at `http://localhost:15672` (`guest` / `guest`).
 
 Stop everything with:
@@ -109,8 +113,9 @@ automatically on boot via Flyway migrations (`src/main/resources/db/migration`).
 
 ### Trying it out
 
-`requests.http` at the repo root has ready-to-run sample requests
-(usable directly from IntelliJ/Ktor's HTTP client, or adapt them to `curl`).
+- Swagger UI: `http://localhost:8080/swagger`
+- `requests.http` at the repo root has ready-to-run sample requests
+  (usable directly from IntelliJ/Ktor's HTTP client, or adapt them to `curl`)
 
 ## Configuration
 
