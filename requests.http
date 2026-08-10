@@ -1,0 +1,30 @@
+### GET notes
+GET  http://localhost:8080/notes
+
+###
+
+### POST note
+POST http://localhost:8080/notes
+Content-Type: application/json
+
+{
+     "title": "",
+    "content":"Testing my first POST"
+}
+
+### PUT note
+PATCH http://localhost:8080/notes/1
+Content-Type: application/json
+
+{
+  "title": "New title"
+}
+###
+### PUT Note
+PATCH http://localhost:8080/notes/1
+Content-Type: application/json
+
+{
+  "content": "New content"
+}
+###

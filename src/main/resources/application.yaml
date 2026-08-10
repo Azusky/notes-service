@@ -1,0 +1,11 @@
+ktor:
+  deployment:
+    port: 8080
+  application:
+    modules:
+      - com.notes.plugins.HttpKt.configureHttp
+      - com.notes.plugins.MonitoringKt.configureMonitoring
+      - com.notes.plugins.SerializationKt.configureSerialization
+      - com.notes.plugins.SecurityKt.configureSecurity
+      - com.notes.plugins.StatusPagesKt.configureStatusPages
+      - com.notes.plugins.RoutingKt.configureRouting
