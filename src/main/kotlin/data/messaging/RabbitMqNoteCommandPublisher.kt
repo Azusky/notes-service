@@ -10,16 +10,11 @@ class RabbitMqNoteCommandPublisher(
     private val connection: RabbitMqConnection
 ) : NoteCommandPublisher {
 
-    override fun publishCreate(message: CreateNoteMessage) {
+    override fun publishCreate(
+        message: CreateNoteMessage
+    ) {
         connection.createChannel().use { channel ->
-
-            channel.queueDeclare(
-                CREATE_NOTE_QUEUE,
-                true,
-                false,
-                false,
-                null
-            )
+            RabbitMqTopology.declare(channel)
 
             channel.confirmSelect()
 
@@ -28,13 +23,9 @@ class RabbitMqNoteCommandPublisher(
                 .encodeToByteArray()
 
             channel.basicPublish(
-                "",
-                CREATE_NOTE_QUEUE,
-                AMQP.BasicProperties.Builder()
-                    .contentType("application/json")
-                    .deliveryMode(2)
-                    .messageId(message.commandId)
-                    .build(),
+                RabbitMqTopology.COMMAND_EXCHANGE,
+                RabbitMqTopology.CREATE_ROUTING_KEY,
+                persistentProperties(message.commandId),
                 payload
             )
 
@@ -47,26 +38,30 @@ class RabbitMqNoteCommandPublisher(
     ) {
         connection.createChannel().use { channel ->
             RabbitMqTopology.declare(channel)
+
             channel.confirmSelect()
+
             val payload = Json
                 .encodeToString(message)
                 .encodeToByteArray()
+
             channel.basicPublish(
                 RabbitMqTopology.COMMAND_EXCHANGE,
                 RabbitMqTopology.UPDATE_ROUTING_KEY,
-                AMQP.BasicProperties.Builder()
-                    .contentType("application/json")
-                    .deliveryMode(2)
-                    .messageId(message.commandId)
-                    .build(),
+                persistentProperties(message.commandId),
                 payload
             )
+
             channel.waitForConfirmsOrDie()
         }
     }
 
-    companion object {
-        const val CREATE_NOTE_QUEUE = "notes.create"
-        const val UPDATE_NOTE_QUEUE = "notes.update"
-    }
+    private fun persistentProperties(
+        commandId: String
+    ) =
+        AMQP.BasicProperties.Builder()
+            .contentType("application/json")
+            .deliveryMode(2)
+            .messageId(commandId)
+            .build()
 }
